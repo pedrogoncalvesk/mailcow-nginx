@@ -10,6 +10,6 @@ until ping phpfpm -c1 > /dev/null; do sleep 1; done
 until ping sogo -c1 > /dev/null; do sleep 1; done
 until ping redis -c1 > /dev/null; do sleep 1; done
 
-if [[ -d "/acme" ]] ; then cp -a /acme /web/.well-known ; fi
+if [[ -d "/acme" ]] ; then cp -a /acme /web/.well-known/acme-challenge ; fi
 
 exec "$@"
